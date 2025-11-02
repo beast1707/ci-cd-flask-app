@@ -64,12 +64,14 @@
       <!-- SHOW MESSAGES -->
       <h4 class="mb-3">Messages</h4>
 
-      {% for entry in messages %}
+      {% if messages %} {% for entry in messages %}
       <div class="message-box">
-        <strong>{{ entry.name }}</strong><br />
-        <p>{{ entry.message }}</p>
+        <strong>{{ entry.name | safe }}</strong><br />
+        <p>{{ entry.message | safe }}</p>
       </div>
-      {% endfor %}
+      {% endfor %} {% else %}
+      <p class="text-muted">No messages yet. Be the first!</p>
+      {% endif %}
     </div>
   </body>
 </html>
