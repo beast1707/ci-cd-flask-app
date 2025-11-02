@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/beast1707/ci-cd-flask-app.git'
-            }
-        }
+       stage('Clone Repo') {
+    steps {
+        git branch: 'main', url: 'https://github.com/beast1707/ci-cd-flask-app.git'
+    }
+}
 
         stage('Build Docker Image') {
             steps {
