@@ -22,6 +22,9 @@ pipeline {
         }
 
         stage('Deploy to Kubernetes') {
+            when {
+                expression { false }   // ✅ DISABLE THIS STAGE COMPLETELY
+            }
             steps {
                 sh 'kubectl apply -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
