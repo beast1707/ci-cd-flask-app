@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request, redirect
+from prometheus_flask_exporter import PrometheusMetrics
+
 import json
 import os
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
+
+
 
 DATA_FILE = "messages.json"
 

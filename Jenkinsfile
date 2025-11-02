@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/your-username/ci-cd-flask-app.git'
+                git 'https://github.com/beast1707/ci-cd-flask-app.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t your-dockerhub-username/guestbook:latest .'
+                sh 'docker build -t ayushd1707/guestbook:latest .'
             }
         }
 
         stage('Push Image') {
             steps {
-                sh 'docker login -u your-dockerhub-username -p your-dockerhub-password'
-                sh 'docker push your-dockerhub-username/guestbook:latest'
+                sh 'docker login -u ayushd1707 -p Beast@1707'
+                sh 'docker push ayushd1707/guestbook:latest'
             }
         }
 
